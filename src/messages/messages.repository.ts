@@ -1,5 +1,4 @@
-import { writeFile } from 'fs';
-import { readFile } from 'fs/promises';
+import { readFile, writeFile } from 'fs/promises';
 
 export class MessagesRepository {
   async findOne(id: string) {
@@ -18,6 +17,6 @@ export class MessagesRepository {
 
     const id = Math.floor(Math.random() * 999);
     messages[id] = { id, content };
-    // await writeFile('messages.json', JSON.stringify(messages));
+    await writeFile('messages.json', JSON.stringify(messages));
   }
 }
