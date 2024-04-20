@@ -1,5 +1,7 @@
+import { Injectable } from '@nestjs/common';
 import { readFile, writeFile } from 'fs/promises';
 
+@Injectable()
 export class MessagesRepository {
   async findOne(id: string) {
     const content = await readFile('messages.json', 'utf8'); //json file တွေက pure string တွေဖြစ်
